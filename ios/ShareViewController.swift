@@ -222,13 +222,18 @@ class ShareViewController: SLComposeServiceViewController {
       return
     }
     
-    let url = URL(string: urlScheme)
+    openURL(urlScheme)
+  }
+
+  internal func openURL(_ url: String) {
+    let urlObj = URL(string: url)
+
     let selectorOpenURL = sel_registerName("openURL:")
     var responder: UIResponder? = self
     
     while responder != nil {
       if responder?.responds(to: selectorOpenURL) == true {
-        responder?.perform(selectorOpenURL, with: url)
+        responder?.perform(selectorOpenURL, with: urlObj)
       }
       responder = responder!.next
     }

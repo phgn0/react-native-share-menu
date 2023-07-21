@@ -10,6 +10,9 @@ export const ShareMenuReactView = {
   dismissExtension(error = null) {
     NativeModules.ShareMenuReactView.dismissExtension(error);
   },
+  openURL(url) {
+    NativeModules.ShareMenuReactView.openURL(url);
+  },
   openApp() {
     NativeModules.ShareMenuReactView.openApp();
   },

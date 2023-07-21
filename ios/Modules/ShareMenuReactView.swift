@@ -48,6 +48,16 @@ public class ShareMenuReactView: NSObject {
     }
 
     @objc
+    func openURL(_ url: String) {
+        guard let viewDelegate = ShareMenuReactView.viewDelegate else {
+            print("Error: \(NO_DELEGATE_ERROR)")
+            return
+        }
+
+        viewDelegate.openURL(url)
+    }
+
+    @objc
     func openApp() {
         guard let viewDelegate = ShareMenuReactView.viewDelegate else {
             print("Error: \(NO_DELEGATE_ERROR)")

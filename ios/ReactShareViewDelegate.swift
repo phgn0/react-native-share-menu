@@ -8,6 +8,8 @@
 public protocol ReactShareViewDelegate {
     func loadExtensionContext() -> NSExtensionContext
 
+    func openURL(_ url: String)
+
     func openApp()
 
     func continueInApp(with items: [NSExtensionItem], and extraData: [String:Any]?)
